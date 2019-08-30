@@ -1,17 +1,17 @@
 <template>
   <div class="hello">
     <h1>crepuscle</h1>
-    <p>amphibian dawn</p>
-    <ul>
-      <li>
-        <img src="../assets/boots-at-night.jpg" alt="galoshes" />
-      </li>
-    </ul>
+    <h2>amphibian dawn</h2>
+    <h3>ashlin aronin</h3>
+    <img src="../assets/boots-at-night.jpg" alt="galoshes" />
     <p>
       the male túngara frogs of gamboa, panama serenade ladies all night long.
       but what happens when the club is over and you have to go home? i created
       a submersible infrared camera to capture the experience of sunrise in a
       puddle.
+    </p>
+    <p>
+      include recording of frogs here
     </p>
     <Visualization />
     <p>more text below visualization</p>
@@ -31,25 +31,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  .hello {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
 h1 {
   text-transform: uppercase;
   font-size: 48px;
   margin: 24px 0 12px;
 }
 
-p {
+h2 {
   margin: 0;
-  padding: 0;
+  font-weight: normal;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
+h3 {
+  margin: 0;
+  font-weight: normal;
 }
 
 a {

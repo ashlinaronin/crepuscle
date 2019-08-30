@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <HelloWorld />
+    <MainContainer />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import MainContainer from "./components/MainContainer.vue";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    MainContainer
   }
 };
 </script>
@@ -22,6 +22,5 @@ export default {
   font-family: "Barlow", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
 }
 </style>

@@ -102,5 +102,7 @@
   #scene {
     width: 100%;
     height: 480px;
+    // rendered as text, so this will center in table
+    text-align: center;
   }
 </style>
