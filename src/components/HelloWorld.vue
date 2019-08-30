@@ -1,12 +1,13 @@
 <template>
   <div class="hello">
     <h1>crepuscle</h1>
-    <p>do laser frogs dream of electric sheep?</p>
+    <p>amphibian dawn</p>
     <ul>
       <li>
         <img src="../assets/boots-at-night.jpg" alt="galoshes" />
       </li>
     </ul>
+    <p>the male túngara frogs of gamboa, panama serenade ladies all night long. but what happens when the club is over and you have to go home? i created a submersible infrared camera to capture the experience of sunrise in a puddle.</p>
   </div>
 </template>
 
@@ -19,9 +20,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 h1 {
-  font-family: "Zilla Slab Highlight", serif;
   text-transform: uppercase;
   font-size: 48px;
+  margin: 24px 0 12px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
 ul {
