@@ -4,8 +4,8 @@
     <Hero />
     <h3>concept</h3>
     <p>
-      Night falls in Gamboa, Panama. The frogs come to life, filling the air with their uncanny mating calls. As day breaks, they retreat into murky ponds and puddles. I created
-      a submersible infrared camera to capture the experience of these sunrises and sunsets from beneath the surface.
+      Night falls in Gamboa, Panama. The Tungara frogs come to life, filling the air with their uncanny mating calls. As day breaks, they retreat into murky ponds and puddles. Digital Naturalism Conference 2019 happened to take place during the mating season. I created
+      a submersible infrared camera to capture the experience of dawn from beneath the surface of a murky puddle, the end of a long night of singing and mating.
     </p>
     <p>
       include recording of frogs here
@@ -25,20 +25,55 @@
         <video controls src="../assets/timelapse/sunrise-2019-08-26.mp4" />
       </li>
     </ul>
-    <h3>process</h3>
-    <p>Here i describe the process of making the thing.</p>
+    <h3>location</h3>
+    <p>Here are a few of the locations where the camera was deployed overnight:</p>
+    <ul>
+      <li>
+        <img src="../assets/caiman-with-camera.jpg" alt="camera rig near a caiman">
+      </li>
+      <li>
+        <img src="../assets/spool-in-puddle.jpg" alt="spooling camera cord into frog pond">
+      </li>
+    </ul>
+
+    <p>Unfortunately, due to technical issues the camera did not capture any images of the caiman.</p>
+    <h3>
+      materials
+    </h3>
+    <ul>
+      <li>Raspberry Pi Zero W</li>
+      <li>Lewis N. Clark WaterSeals hard case</li>
+      <li>Raspberry Pi NoIR camera</li>
+      <li>2 packets of silica gel</li>
+      <li>SparkFun Buck Boost</li>
+      <li>infrared flashlight</li>
+      <li>Anker PowerCore 10,000mAh power bank</li>
+      <li>USB to micro USB cable</li>
+      <li>100 ft of paracord</li>
+      <li>cement block</li>
+      <li>zip ties</li>
+      <li>solder</li>
+      <li>wires</li>
+      <li>4 rechargeable AAA batteries</li>
+      <li>battery charger</li>
+      <li>AAA battery pack</li>
+    </ul>
+    <Problems />
+
   </div>
 </template>
 
 <script>
 import Visualization from "./Visualization.vue"
 import Hero from "./Hero.vue";
+import Problems from "./Problems.vue"
 
 export default {
   name: "HelloWorld",
   components: {
     Visualization,
-    Hero
+    Hero,
+    Problems
   }
 };
 </script>
@@ -60,6 +95,11 @@ h1 {
     list-style: none;
     margin: 0;
     padding: 0;
+
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/list-style#Accessibility_concerns
+    li::before {
+      content: "\200B";
+    }
   }
 
   li {
@@ -75,6 +115,6 @@ h1 {
   img {
     display: block;
     width: 300px;
-    margin: 0 auto;
+    margin: 0 auto 10px;
   }
 </style>
