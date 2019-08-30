@@ -1,11 +1,11 @@
 <!-- adapted from https://github.com/mrdoob/three.js/blob/master/examples/webgl_effects_ascii.html -->
 <template>
-  <div id="scene"/>
+  <div id="scene" />
 </template>
 <script>
   import * as THREE from "three";
   import { AsciiEffect } from "../library/three/AsciiEffect.js";
-  import { initializeControls, updateControlsOnResize, rotateObject} from "../library/three/rotateControls";
+  import { initializeControls, destroyControls, updateControlsOnResize, rotateObject} from "../library/three/rotateControls";
   import { TrackballControls } from "../library/three/TrackballControls.js";
 
   export default {
@@ -32,7 +32,6 @@
           1,
           1000
         );
-        this.camera.position.y = 150;
         this.camera.position.z = 500;
         
         this.scene = new THREE.Scene();
@@ -89,23 +88,19 @@
       },
       render() {
         const timer = Date.now() - this.start;
-//        this.sphere.position.y = Math.abs(Math.sin(timer * 0.002)) * 150;
-//        this.sphere.rotation.x = timer * 0.0003;
-//        this.sphere.rotation.z = timer * 0.0002;
-//        controls.update();
+        this.sphere.rotation.z = timer * 0.0002;
         rotateObject(this.sphere);
         this.effect.render(this.scene, this.camera);
       },
       destroyed() {
-
+        destroyControls();
       }
     }
   }
 </script>
 <style scoped lang="scss">
   #scene {
-    // todo responsive
-    width: 640px;
+    width: 100%;
     height: 480px;
   }
 </style>

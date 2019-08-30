@@ -51,6 +51,12 @@ export function initializeControls(sceneDiv) {
   sceneContainer.addEventListener( 'touchmove', onDocumentTouchMove, false );
 }
 
+export function destroyControls() {
+  sceneContainer.removeEventListener( 'mousedown', onDocumentMouseDown );
+  sceneContainer.removeEventListener( 'touchstart', onDocumentTouchStart );
+  sceneContainer.removeEventListener( 'touchmove', onDocumentTouchMove );
+}
+
 export function rotateObject(object) {
   object.rotation.y += ( targetRotation - object.rotation.y ) * 0.05;
 }
