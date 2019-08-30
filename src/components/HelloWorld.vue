@@ -7,13 +7,24 @@
         <img src="../assets/boots-at-night.jpg" alt="galoshes" />
       </li>
     </ul>
-    <p>the male túngara frogs of gamboa, panama serenade ladies all night long. but what happens when the club is over and you have to go home? i created a submersible infrared camera to capture the experience of sunrise in a puddle.</p>
+    <p>
+      the male túngara frogs of gamboa, panama serenade ladies all night long.
+      but what happens when the club is over and you have to go home? i created
+      a submersible infrared camera to capture the experience of sunrise in a
+      puddle.
+    </p>
+    <Visualization />
   </div>
 </template>
 
 <script>
+import Visualization from "./Visualization.vue"
+
 export default {
-  name: "HelloWorld"
+  name: "HelloWorld",
+  components: {
+    Visualization,
+  }
 };
 </script>
 
