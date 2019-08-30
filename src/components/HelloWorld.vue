@@ -14,6 +14,7 @@
       puddle.
     </p>
     <Visualization />
+    <p>more text below visualization</p>
   </div>
 </template>
 
