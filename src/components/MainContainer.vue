@@ -10,7 +10,16 @@
     <p>
       include recording of frogs here
     </p>
-    <Visualization />
+    <div class="sketchfab-embed-wrapper">
+      <iframe title="A 3D model" width="640" height="480" src="https://sketchfab.com/models/5ba6853a7465411891d52f8bf614e9cf/embed?autospin=0.2&amp;autostart=1&amp;preload=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+      <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+        <a href="https://sketchfab.com/3d-models/ashlin-5ba6853a7465411891d52f8bf614e9cf?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">crepuscle</a>
+        by <a href="https://sketchfab.com/scenicbanker?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">scenicbanker</a>
+        on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+      </p>
+    </div>
+    <!--<Visualization />-->
     <h3>results</h3>
     <p>Here are some timelapse videos of the results. As you can see in the histogram below, there is only a narrow band of available data in most of the images, since light (including infrared) does not travel well underwater.</p>
     <p>
@@ -24,6 +33,9 @@
       <li>
         <video controls src="../assets/timelapse/sunrise-2019-08-26.mp4" />
       </li>
+      <li>
+        <video controls src="../assets/timelapse/sunrise-2019-08-27.mp4" />
+      </li>
     </ul>
     <h3>location</h3>
     <p>Here are a few of the locations where the camera was deployed overnight:</p>
@@ -36,7 +48,6 @@
       </li>
     </ul>
 
-    <p>Unfortunately, due to technical issues the camera did not capture any images of the caiman.</p>
     <h3>
       materials
     </h3>

@@ -1,12 +1,16 @@
 <!-- adapted from https://github.com/mrdoob/three.js/blob/master/examples/webgl_effects_ascii.html -->
 <template>
-  <div id="scene" />
+  <div id="scene" >
+    <canvas id="scene-canvas" ref="sceneCanvas" />
+  </div>
 </template>
 <script>
   import * as THREE from "three";
-  import { AsciiEffect } from "../library/three/AsciiEffect.js";
-  import { initializeControls, destroyControls, updateControlsOnResize, rotateObject} from "../library/three/rotateControls";
-  import { TrackballControls } from "../library/three/TrackballControls.js";
+  import { AsciiEffect } from "three/examples/jsm/effects/AsciiEffect";
+  import { initializeControls, destroyControls, updateControlsOnResize, rotateObject} from "../library/rotateControls";
+  import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
+  import { OBJLoader2 } from "three/examples/jsm/loaders/OBJLoader2";
+  import { MtlObjBridge } from "three/examples/jsm/loaders/obj2/bridge/MtlObjBridge";
 
   export default {
     data() {
@@ -32,9 +36,12 @@
           1,
           1000
         );
+//        this.camera.position.x = 0;
         this.camera.position.z = 500;
         
         this.scene = new THREE.Scene();
+
+        this.loadModel();
         
         const light1 = new THREE.PointLight(0xffffff);
         light1.position.set(500, 500, 500);
@@ -43,13 +50,10 @@
         const light2 = new THREE.PointLight(0xffffff, 0.25);
         light2.position.set(-500, -500, -500);
         this.scene.add(light2);
-        
-        this.sphere = new THREE.Mesh(
-          new THREE.SphereBufferGeometry(200, 20, 10),
-          new THREE.MeshPhongMaterial({ flatShading: true })
-        );
-        this.scene.add(this.sphere);
-        
+
+        const sun = new THREE.DirectionalLight(0xff0000, 0.5);
+        this.scene.add(sun);
+
         // this.plane
         this.plane = new THREE.Mesh(
           new THREE.PlaneBufferGeometry(400, 400),
@@ -59,19 +63,48 @@
         this.plane.rotation.x = -Math.PI / 2;
         this.scene.add(this.plane);
         
-        this.renderer = new THREE.WebGLRenderer();
+        this.renderer = new THREE.WebGLRenderer({
+          canvas: this.$refs.sceneCanvas,
+          antialias: true,
+          autoClear: true
+        });
+        this.renderer.setClearColor( 0x050505 );
         this.renderer.setSize(this.$el.offsetWidth, this.$el.offsetHeight);
-        
-        this.effect = new AsciiEffect(this.renderer, " .:-+*=%@#", { invert: true });
-        this.effect.setSize(this.$el.offsetWidth, this.$el.offsetHeight);
-        this.effect.domElement.style.color = "white";
-        this.effect.domElement.style.backgroundColor = "black";
-        // Special case: append effect.domElement, instead of renderer.domElement.
-        // AsciiEffect creates a custom domElement (a div container) where the ASCII elements are placed.
-        this.$el.appendChild(this.effect.domElement);
+
+        this.$el.appendChild(this.renderer.domElement);
         
         initializeControls(this.$el);
         document.body.addEventListener("resize", this.onWindowResize, false);
+      },
+      loadModel() {
+        let modelName = 'ashlin';
+        this._reportProgress( { detail: { text: 'Loading: ' + modelName } } );
+        let scope = this;
+        let objLoader2 = new OBJLoader2();
+        let callbackOnLoad = function ( object3d ) {
+          scope.scene.add( object3d );
+          window.obj = object3d;
+//          object3d.position.x = 200
+//          object3d.position.y = 200
+//          object3d.position.z = 200
+          console.log( 'Loading complete: ' + modelName );
+          scope._reportProgress( { detail: { text: '' } } );
+        };
+        let onLoadMtl = function ( mtlParseResult ) {
+          objLoader2.setModelName( modelName );
+          objLoader2.setLogging( true, true );
+          objLoader2.addMaterials( MtlObjBridge.addMaterialsFromMtlLoader( mtlParseResult ) );
+          objLoader2.load( 'ashlin.obj', callbackOnLoad, null, null, null );
+        };
+        let mtlLoader = new MTLLoader();
+        mtlLoader.load( 'ashlin.mtl', onLoadMtl );
+      },
+      _reportProgress: function ( event ) {
+        let output = '';
+        if ( event.detail !== null && event.detail !== undefined && event.detail.text ) {
+          output = event.detail.text;
+        }
+        console.log( 'Progress: ' + output );
       },
       animate() {
         requestAnimationFrame(this.animate);
@@ -87,10 +120,10 @@
         updateControlsOnResize();
       },
       render() {
-        const timer = Date.now() - this.start;
-        this.sphere.rotation.z = timer * 0.0002;
-        rotateObject(this.sphere);
-        this.effect.render(this.scene, this.camera);
+//        const timer = Date.now() - this.start;
+//        this.sphere.rotation.z = timer * 0.0002;
+//        rotateObject(this.sphere);
+        this.renderer.render(this.scene, this.camera);
       },
       destroyed() {
         destroyControls();
