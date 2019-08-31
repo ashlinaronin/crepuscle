@@ -24,24 +24,26 @@
         <ul>
           <li>It appears that when I had connected the infrared light to the 5V out on the Pi board, it was drawing a high amount of current (1.8 amps)</li>
           <li>The Pi itself draws around 80 mA, and the battery provides around 2.1 A at peak capacity</li>
-          <li>Solution was to use a separate battery pack for the light. This </li>
+          <li>Solution was to use a separate battery pack for the light</li>
         </ul>
       </li>
       <li>
         Running out of space on small sd card (908M of 8gigs left after OS)
         <ul>
-          <li>Set compression setting to lower so each file takes up less space</li>
+          <li>Set JPEG compression setting to lower so each file takes up less space</li>
         </ul>
       </li>
       <li>
-        It gets really hot
+        There isn't much to see in the middle of the night, since infrared light doesn't carry far in mud puddles
         <ul>
           <li>
-            Should be fine in the water :)
+            Decided to focus on sunrise since the way light breaks through mud is quite interesting
           </li>
         </ul>
       </li>
     </ul>
+    <p>Shout outs to everyone at Dinacon 2019 who helped me with this project-- especially Andy Quitmeyer and Rob Faludi.</p>
+    <p>Many thanks to the Oregon Arts Commission for funding my participation in this experience.</p>
   </div>
 </template>
 

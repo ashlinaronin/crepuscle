@@ -4,12 +4,14 @@
     <Hero />
     <h3>concept</h3>
     <p>
-      Night falls in Gamboa, Panama. The Tungara frogs come to life, filling the air with their uncanny mating calls. As day breaks, they retreat into murky ponds and puddles. Digital Naturalism Conference 2019 happened to take place during the mating season. I created
-      a submersible infrared camera to capture the experience of dawn from beneath the surface of a murky puddle, the end of a long night of singing and mating.
+      Night falls in Gamboa, Panama -- site of the 2019 Digital Naturalism Conference. The Tungara frogs come to life, filling the air with their uncanny mating calls resonating from murky ponds and puddles. As day breaks, they retreat. I created
+      a submersible infrared timelapse camera to capture the experience of dawn from beneath the surface of a muddy puddle, the end of a long night of singing and mating.
     </p>
     <p>
-      include recording of frogs here
+      Hear the frogs:
     </p>
+    <audio controls src="frogs.mp3" />
+    <p>This is the device I produced:</p>
     <div class="sketchfab-embed-wrapper">
       <iframe title="A 3D model" width="640" height="480" src="https://sketchfab.com/models/5ba6853a7465411891d52f8bf614e9cf/embed?autospin=0.2&amp;autostart=1&amp;preload=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
@@ -20,8 +22,8 @@
       </p>
     </div>
     <!--<Visualization />-->
-    <h3>results</h3>
-    <p>Here are some timelapse videos of the results. As you can see in the histogram below, there is only a narrow band of available data in most of the images, since light (including infrared) does not travel well underwater.</p>
+    <h3>videos</h3>
+    <p>As you can see in the histogram below, there is only a narrow band of available data in most of the images, since light (including infrared) does not travel well underwater.</p>
     <p>
       To compensate, I applied the below color curve to each image with <strong>ImageMagick</strong> so that all available data is visible, then compiled them into videos using <strong>ffmpeg</strong>. This results in some slightly unnatural color artifacts from boosting data that is usually not visible.
     </p>
@@ -61,6 +63,7 @@
       <li>Anker PowerCore 10,000mAh power bank</li>
       <li>USB to micro USB cable</li>
       <li>100 ft of paracord</li>
+      <li>1 ft length of bamboo</li>
       <li>cement block</li>
       <li>zip ties</li>
       <li>solder</li>
@@ -118,10 +121,11 @@ h1 {
     padding: 0;
   }
 
-  video {
+  video, audio {
     width: 100%;
     margin-bottom: 10px;
   }
+
 
   img {
     display: block;
