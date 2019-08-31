@@ -5,13 +5,11 @@
     <img src="../assets/boots-at-night.jpg" alt="galoshes" />
   </div>
 </template>
-<script>
-
-</script>
+<script></script>
 <style scoped lang="scss">
-  .hero {
-    position: relative;
-  }
+.hero {
+  position: relative;
+}
 
 img {
   width: 100%;
