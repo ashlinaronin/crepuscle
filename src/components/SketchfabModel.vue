@@ -2,8 +2,8 @@
   <div class="sketchfab-embed-wrapper">
     <iframe
         title="A 3D model"
-        width="640"
-        height="480"
+        width="320"
+        height="300"
         src="https://sketchfab.com/models/5ba6853a7465411891d52f8bf614e9cf/embed?autospin=0.2&amp;autostart=1&amp;preload=1"
         frameborder="0"
         allow="autoplay; fullscreen; vr"
