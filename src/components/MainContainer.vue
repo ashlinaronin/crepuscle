@@ -37,46 +37,22 @@
         <img src="../assets/puddle-night.jpg" alt="camera in frog puddle at night">
       </li>
     </ul>
-    <p>This is the device I produced:</p>
-    <div class="sketchfab-embed-wrapper">
-      <iframe
-          title="A 3D model"
-          width="640"
-          height="480"
-          src="https://sketchfab.com/models/5ba6853a7465411891d52f8bf614e9cf/embed?autospin=0.2&amp;autostart=1&amp;preload=1"
-          frameborder="0"
-          allow="autoplay; fullscreen; vr"
-          mozallowfullscreen="true"
-          webkitallowfullscreen="true"
-      ></iframe>
-
-      <p
-          style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"
-      >
-        <a
-            href="https://sketchfab.com/3d-models/ashlin-5ba6853a7465411891d52f8bf614e9cf?utm_medium=embed&utm_source=website&utm_campaign=share-popup"
-            target="_blank"
-            style="font-weight: bold; color: #1CAAD9;"
-        >crepuscle</a
-        >
-        by
-        <a
-            href="https://sketchfab.com/scenicbanker?utm_medium=embed&utm_source=website&utm_campaign=share-popup"
-            target="_blank"
-            style="font-weight: bold; color: #1CAAD9;"
-        >scenicbanker</a
-        >
-        on
-        <a
-            href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup"
-            target="_blank"
-            style="font-weight: bold; color: #1CAAD9;"
-        >Sketchfab</a
-        >
-      </p>
-    </div>
-    <!--<Visualization />-->
+    <SketchfabModel />
     <h3>videos</h3>
+
+    <ul>
+      <li>
+        <video controls src="../assets/timelapse/sunrise-2019-08-30.mp4"/>
+      </li>
+      <li>
+        <video controls src="../assets/timelapse/sunrise-2019-08-26.mp4"/>
+      </li>
+      <li>
+        <video controls src="../assets/timelapse/sunrise-2019-08-27.mp4"/>
+      </li>
+    </ul>
+
+    <h3>process</h3>
     <p>
       As you can see in the histogram below, there is only a narrow band of
       available data in most of the images, since light (including infrared)
@@ -90,19 +66,6 @@
       not visible.
     </p>
     <img src="../assets/curves.png" alt="color curves"/>
-    <ul>
-      <li>
-        <video controls src="../assets/timelapse/sunrise-2019-08-30.mp4"/>
-      </li>
-      <li>
-        <video controls src="../assets/timelapse/sunrise-2019-08-26.mp4"/>
-      </li>
-      <li>
-        <video controls src="../assets/timelapse/sunrise-2019-08-27.mp4"/>
-      </li>
-    </ul>
-
-
     <h3>
       materials
     </h3>
@@ -132,12 +95,14 @@
 <script>
   import Hero from "./Hero.vue";
   import Problems from "./Problems.vue";
+  import SketchfabModel from "./SketchfabModel.vue";
 
   export default {
     name: "HelloWorld",
     components: {
       Hero,
-      Problems
+      Problems,
+      SketchfabModel
     }
   };
 </script>
