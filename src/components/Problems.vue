@@ -63,7 +63,7 @@
     </ul>
     <p>
       Shout outs to everyone at Dinacon 2019 who helped me with this project--
-      especially Andy Quitmeyer and Rob Faludi.
+      especially Andy Quitmeyer, Sid Drmay and Rob Faludi.
     </p>
     <p>
       Many thanks to the Oregon Arts Commission for funding my participation in

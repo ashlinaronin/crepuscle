@@ -37,7 +37,7 @@
         <img src="../assets/puddle-night.jpg" alt="camera in frog puddle at night">
       </li>
     </ul>
-    <SketchfabModel />
+
     <h3>videos</h3>
 
     <ul>
@@ -53,6 +53,11 @@
     </ul>
 
     <h3>process</h3>
+    <p>
+      Here is an image and a 3D scan of the device I produced. The scan looks a bit crappy, almost like the capsule was dug up from the bottom of the ocean after a few years of decay.
+    </p>
+    <img src="../assets/crepuscle-rig.jpg" alt="crepuscle rig">
+    <SketchfabModel />
     <p>
       As you can see in the histogram below, there is only a narrow band of
       available data in most of the images, since light (including infrared)
