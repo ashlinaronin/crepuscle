@@ -1,15 +1,11 @@
 <template>
-  <div class="hello">
+  <div class="main-container">
     <h1>crepuscle</h1>
     <Hero/>
     <h3>concept</h3>
     <p>
       Night falls in Gamboa, Panama -- site of the 2019 Digital Naturalism Conference. The Tungara frogs come to life, filling the air with their uncanny mating calls resonating from murky ponds and puddles. As day breaks, they retreat. I created a submersible infrared timelapse camera to capture the experience of dawn from beneath the surface of a muddy puddle, the end of a long night of singing and mating.
     </p>
-    <p>
-      Hear the frogs:
-    </p>
-    <audio controls src="frogs.mp3"/>
     <h3>location</h3>
     <p>
       Here are a few of the locations where the camera was deployed overnight:
@@ -34,18 +30,8 @@
     </ul>
 
     <h3>videos</h3>
-
-    <ul>
-      <li>
-        <video controls src="../assets/timelapse/sunrise-2019-08-30.mp4"/>
-      </li>
-      <li>
-        <video controls src="../assets/timelapse/sunrise-2019-08-26.mp4"/>
-      </li>
-      <li>
-        <video controls src="../assets/timelapse/sunrise-2019-08-27.mp4"/>
-      </li>
-    </ul>
+    <iframe src="https://player.vimeo.com/video/360214429" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    <p><a href="https://vimeo.com/360214429">crepuscle</a> from <a href="https://vimeo.com/aronin">aronin</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
     <h3>process</h3>
     <ul class="image-container">
@@ -120,7 +106,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  .hello {
+  .main-container {
     max-width: 640px;
     margin: 0 auto;
   }
