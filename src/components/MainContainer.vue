@@ -32,8 +32,6 @@
     <h3>videos</h3>
     <iframe src="https://player.vimeo.com/video/360214429" width="640" height="360" frameborder="0"
             allow="autoplay; fullscreen" allowfullscreen></iframe>
-    <p><a href="https://vimeo.com/360214429">crepuscle</a> from <a href="https://vimeo.com/aronin">aronin</a> on <a
-        href="https://vimeo.com">Vimeo</a>.</p>
 
     <h3>process</h3>
     <ul class="image-container">
@@ -69,7 +67,8 @@
     <p>
       I then applied this curve to each image with a command line batch process using <strong>ImageMagick</strong>, then compiled the images into videos using <strong>ffmpeg</strong>.
     </p>
-    <p>Overall, this project was a great learning experience. I learned about the physics of light and water, efficient and appropriate use of batteries in electronics, batch image processing using open source software, and how to use local found materials like bamboo and cement blocks.</p>
+    <p>
+      Overall, this project was a great learning experience. I learned about the physics of light and water, efficient and appropriate use of batteries in electronics, batch image processing using open source software, and how to use local found materials like bamboo and cement blocks.</p>
     <h3>
       materials
     </h3>
