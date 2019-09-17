@@ -58,7 +58,9 @@
       With this arrangement, I would experience seemingly random issues where the Pi would stop taking images and lose network connectivity once running on battery power out in the field. After some investigation and discussion with other knowledgeable folks, I measured the current drawn by the infrared light and determined it was drawing 1.8 amps. The battery pack I was using to power the Pi provides around 2.1 amps at peak capacity, so this arrangement only worked when it was fully charged. As soon as the battery was drawn down a bit, the Pi was not getting enough current to operate (around 80-100mA), so the camera ceased to work. The solution was to use a separate battery pack for the light.
     </p>
     <p>
-      Even after solving this and other technical problems, like running out of space on the Pi's SD card, and <a href="https://www.raspberrypi.org/documentation/usage/camera/raspicam/timelapse.md" target="_blank" rel="noopener">figuring out the right cron / shell script configuration for timelapse images</a>, a fundamental problem remained: infrared light doesn't travel well underwater, perhaps because it is at the low end of the light spectrum, meaning it has low energy. Therefore, there wasn't much to see in the middle of the night in the images that crepuscle produced. I schemed about how to make the most of these initially disappointing results.
+      Even after solving this and other technical problems, like running out of space on the Pi's SD card, and <a
+        href="https://www.raspberrypi.org/documentation/usage/camera/raspicam/timelapse.md" target="_blank"
+        rel="noopener">figuring out the right cron / shell script configuration for timelapse images</a>, a fundamental problem remained: infrared light doesn't travel well underwater, perhaps because it is at the low end of the light spectrum, meaning it has low energy. Therefore, there wasn't much to see in the middle of the night in the images that crepuscle produced. I schemed about how to make the most of these initially disappointing results.
     </p>
     <p>
       At first, all the images seemed completely black. However, when I took a look at the histogram for a random image in the free image editing software GIMP, I noticed that there was some image data in the very low wavelengths. I experimented with bumping up the color curves so this information was more visible, and was pleased with the somewhat psychedelic effect.
@@ -69,7 +71,13 @@
     </p>
     <p>
       Overall, this project was a great learning experience. I learned about the physics of light and water, efficient and appropriate use of batteries in electronics, batch image processing using open source software, and how to use local found materials like bamboo and cement blocks.</p>
-    <p>Thanks to Andy Quitmeyer, Sid Drmay, Rob Faludi, Josh Michaels and everyone else who helped out. Thanks also to the Oregon Arts Commission for their financial support which made this project and experience possible.</p>
+    <p>Thanks to <a href="http://andy.dorkfort.com/andy/man/" target="_blank" rel="noopener">Andy Quitmeyer</a>, <a
+        href="https://twitter.com/webspookie" target="_blank" rel="noopener">Sid Drmay</a>, <a
+        href="https://www.faludi.com" target="_blank" rel="noopener">Rob Faludi</a>, <a
+        href="http://www.joshjet.net/about" target="_blank" rel="noopener">Josh Michaels</a>
+      and everyone else who helped out. Thanks also to the <a
+          href="https://www.oregonartscommission.org/" target="_blank" rel="noopener">Oregon Arts Commission</a>
+      for their financial support which made this project and experience possible.</p>
     <h3>
       materials
     </h3>
