@@ -30,8 +30,10 @@
     </ul>
 
     <h3>videos</h3>
-    <iframe src="https://player.vimeo.com/video/360214429" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-    <p><a href="https://vimeo.com/360214429">crepuscle</a> from <a href="https://vimeo.com/aronin">aronin</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+    <iframe src="https://player.vimeo.com/video/360214429" width="640" height="360" frameborder="0"
+            allow="autoplay; fullscreen" allowfullscreen></iframe>
+    <p><a href="https://vimeo.com/360214429">crepuscle</a> from <a href="https://vimeo.com/aronin">aronin</a> on <a
+        href="https://vimeo.com">Vimeo</a>.</p>
 
     <h3>process</h3>
     <ul class="image-container">
@@ -41,30 +43,33 @@
       </li>
     </ul>
     <p>
-      Here is an image and a 3D scan of the device produced by <a href="http://www.gracegrothaus.com/" rel="noopener"
-                                                                  target="_blank">Grace Grothaus</a>. The transparent plastic on the box confused the scanner, but I find the aesthetic fitting, as if the capsule were rescued from the bottom of the ocean after years of decay.
+      This is the device I ultimately produced (photo left, 3D scan right by <a href="http://www.gracegrothaus.com/"
+                                                                                rel="noopener" target="_blank">Grace Grothaus</a>). The transparent plastic on the box confused the scanner, but I find the aesthetic fitting, as if the capsule were rescued from the bottom of the ocean after years of decay.
     </p>
     <p>
-      I arrived at Dinacon with a loose idea of what I would need to make this project happen and what the results would look like. I brought an infrared camera, a Raspberry Pi, a waterproof case and 100 feet of paracord.</p>
+      I arrived at Dinacon with a loose idea of what I would need to make this project happen and what the results would look like. I brought an infrared camera, a Raspberry Pi, a waterproof case and 100 feet of paracord.
+    </p>
     <p>
-      I took an iterative approach, repeatedly testing versions of the prototype. The first thing I realized was that for an infrared camera to work properly in low-light environments, it needs an infrared light source. I tried using one, then three small infrared LEDS in series, powered by the Raspberry Pi. It quickly became clear that this was not enough light to penetrate the murky underwater depths.</p>
+      I took an iterative approach, repeatedly testing versions of the prototype. The first thing I realized was that for an infrared camera to work properly in low-light environments, it needs an infrared light source. I tried using one, then three small infrared LEDs in series, powered by the Raspberry Pi. It quickly became clear that this was not enough light to penetrate the murky underwater depths.
+    </p>
     <p>
-      The next step was to take apart a heavy-duty infrared floodlight used by local bat researchers for nocturnal imaging. I extracted the circuit board and LEDs from the internals of this light, disabled the ambient light sensor and rewired the power supply to run off the Pi power supply using a SparkFun Buck Boost.</p>
+      The next step was to take apart a heavy-duty infrared floodlight used by local bat researchers for nocturnal imaging. I extracted the circuit board and LEDs from the internals of this light, disabled the ambient light sensor and rewired the power supply to run off the Pi power supply using a SparkFun Buck Boost.
+    </p>
     <img src="../assets/infrared-light-buckboost.jpg" alt="deconstructed infrared light">
     <p>
-      With this arrangement, I would experience seemingly random issues where the Pi would stop taking images and lose network connectivity once running on battery power out in the field. After some investigation and discussion with other knowledgeable folks, I measured the current drawn by the infrared light and determined it was drawing 1.8 amps. The battery pack I was using to power the Pi provides around 2.1 amps at peak capacity, so this arrangement only worked when it was fully charged. As soon as the battery was drawn down a bit, the Pi was not getting enough current to operate (around 80-100mA), so the camera ceased to work. The solution was to use a separate battery pack for the light.</p>
-
-    <p>Even after solving this and other technical problems, like running out of psace on the SD card, and figuring out the right cron / shell script configuration for timelapse images, a fundamental problem remained. Apparently infrared light doesn't travel well underwater.There isn't much to see in the middle of the night, since infrared light doesn't carry far in mud puddles.
-
-      Thinking about the focus of the conference on making new connections between humans and our environment. I thought it would be interesting to focus on sunrise since the way light breaks through mud is quite interesting.</p>
-
-    <p>
-      In the histogram below, you can see there is only a narrow band of available data in most of the images, demonstrating how visible (and infrared) light do not travel well underwater.
+      With this arrangement, I would experience seemingly random issues where the Pi would stop taking images and lose network connectivity once running on battery power out in the field. After some investigation and discussion with other knowledgeable folks, I measured the current drawn by the infrared light and determined it was drawing 1.8 amps. The battery pack I was using to power the Pi provides around 2.1 amps at peak capacity, so this arrangement only worked when it was fully charged. As soon as the battery was drawn down a bit, the Pi was not getting enough current to operate (around 80-100mA), so the camera ceased to work. The solution was to use a separate battery pack for the light.
     </p>
     <p>
-      To compensate, I prototyped the below color curve in GIMP, then applied it to each image with <strong>ImageMagick</strong> so that all available data is visible, then compiled them into videos using <strong>ffmpeg</strong>. This results in some slightly unnatural color artifacts from boosting data that is usually not visible, but I like the effect.
+      Even after solving this and other technical problems, like running out of space on the Pi's SD card, and figuring out the right cron / shell script configuration for timelapse images, a fundamental problem remained: infrared light doesn't travel well underwater, perhaps because it is at the low end of the light spectrum, meaning it has low energy. Therefore, there wasn't much to see in the middle of the night in the images that crepuscle produced. I schemed about how to make the most of these initially disappointing results.
+    </p>
+    <p>
+      At first, all the images seemed completely black. However, when I took a look at the histogram for a random image in the free image editing software GIMP, I noticed that there was some image data in the very low wavelengths. I experimented with bumping up the color curves so this information was more visible, and was pleased with the somewhat psychedelic effect.
     </p>
     <img src="../assets/curves.png" alt="color curves"/>
+    <p>
+      I then applied this curve to each image with a command line batch process using <strong>ImageMagick</strong>, then compiled the images into videos using <strong>ffmpeg</strong>.
+    </p>
+    <p>Overall, this project was a great learning experience. I learned about the physics of light and water, efficient and appropriate use of batteries in electronics, batch image processing using open source software, and how to use local found materials like bamboo and cement blocks.</p>
     <h3>
       materials
     </h3>
@@ -86,6 +91,7 @@
       <li>4 rechargeable AAA batteries</li>
       <li>battery charger</li>
       <li>AAA battery pack</li>
+      <li>Aquarian H2A-XLR hydrophone and Zoom H4n audio recorder (for frog audio recordings)</li>
     </ul>
   </div>
 </template>
